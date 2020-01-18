@@ -1,7 +1,13 @@
+
 import numpy as np
 import re
 from sklearn.datasets import fetch_20newsgroups
 from sklearn.datasets import load_files
+import yaml
+
+with open("config.yml", 'r') as ymlfile:
+    cfg = yaml.load(ymlfile)
+dataset_name = cfg["datasets"]["default"]
 
 
 def clean_str(string):
@@ -64,21 +70,21 @@ def get_datasets_mrpolarity(positive_data_file, negative_data_file):
     Returns split sentences and labels.
     """
     # Load data from files
-    positive_examples = list(open(positive_data_file, "r").readlines())
+    positive_examples = list(open(positive_data_file, "r", encoding='latin-1').readlines())
     positive_examples = [s.strip() for s in positive_examples]
-    negative_examples = list(open(negative_data_file, "r").readlines())
+    negative_examples = list(open(negative_data_file, "r", encoding='latin-1').readlines())
     negative_examples = [s.strip() for s in negative_examples]
 
     datasets = dict()
     datasets['data'] = positive_examples + negative_examples
-    target = [0 for x in positive_examples] + [1 for x in negative_examples]
+    target = [0 for _ in positive_examples] + [1 for _ in negative_examples]
     datasets['target'] = target
     datasets['target_names'] = ['positive_examples', 'negative_examples']
     return datasets
 
 
 def get_datasets_localdata(container_path=None, categories=None, load_content=True,
-                       encoding='utf-8', shuffle=True, random_state=42):
+                       encoding='latin-1', shuffle=True, random_state=42):
     """
     Load text files with categories as subfolder names.
     Individual samples are assumed to be files stored a two levels folder structure.
@@ -102,11 +108,12 @@ def load_data_labels(datasets):
     """
     # Split by words
     x_text = datasets['data']
-    x_text = [clean_str(sent) for sent in x_text]
+    if dataset_name != "localdata":
+        x_text = [clean_str(sent) for sent in x_text]
     # Generate labels
     labels = []
     for i in range(len(x_text)):
-        label = [0 for j in datasets['target_names']]
+        label = [0 for _ in datasets['target_names']]
         label[datasets['target'][i]] = 1
         labels.append(label)
     y = np.array(labels)

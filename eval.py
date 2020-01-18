@@ -18,6 +18,7 @@ def softmax(x):
     exp_x = np.exp(x - max_x)
     return exp_x / np.sum(exp_x, axis=1).reshape((-1, 1))
 
+
 with open("config.yml", 'r') as ymlfile:
     cfg = yaml.load(ymlfile)
 
@@ -28,8 +29,9 @@ with open("config.yml", 'r') as ymlfile:
 
 # Eval Parameters
 tf.flags.DEFINE_integer("batch_size", 64, "Batch Size (default: 64)")
-tf.flags.DEFINE_string("checkpoint_dir", "", "Checkpoint directory from training run")
-tf.flags.DEFINE_boolean("eval_train", False, "Evaluate on all training data")
+tf.flags.DEFINE_string("checkpoint_dir", "./runs/1579162611/checkpoints", "Checkpoint directory from training run")
+tf.flags.DEFINE_string("eval_dataset", "test", "Evaluate use dataset: train/test")
+
 
 # Misc Parameters
 tf.flags.DEFINE_boolean("allow_soft_placement", True, "Allow device soft device placement")
@@ -37,9 +39,8 @@ tf.flags.DEFINE_boolean("log_device_placement", False, "Log placement of ops on 
 
 
 FLAGS = tf.flags.FLAGS
-FLAGS._parse_flags()
 print("\nParameters:")
-for attr, value in sorted(FLAGS.__flags.items()):
+for attr, value in sorted(FLAGS.flag_values_dict().items()):
     print("{}={}".format(attr.upper(), value))
 print("")
 
@@ -47,7 +48,8 @@ datasets = None
 
 # CHANGE THIS: Load data. Load your own data here
 dataset_name = cfg["datasets"]["default"]
-if FLAGS.eval_train:
+
+if FLAGS.eval_dataset == 'train':
     if dataset_name == "mrpolarity":
         datasets = data_helpers.get_datasets_mrpolarity(cfg["datasets"][dataset_name]["positive_data_file"]["path"],
                                              cfg["datasets"][dataset_name]["negative_data_file"]["path"])
@@ -56,9 +58,23 @@ if FLAGS.eval_train:
                                               categories=cfg["datasets"][dataset_name]["categories"],
                                               shuffle=cfg["datasets"][dataset_name]["shuffle"],
                                               random_state=cfg["datasets"][dataset_name]["random_state"])
+    elif dataset_name == "localdata":
+        datasets = data_helpers.get_datasets_localdata(container_path=cfg["datasets"][dataset_name]["container_path"],
+                                                       categories=cfg["datasets"][dataset_name]["categories"],
+                                                       shuffle=cfg["datasets"][dataset_name]["shuffle"],
+                                                       random_state=cfg["datasets"][dataset_name]["random_state"])
     x_raw, y_test = data_helpers.load_data_labels(datasets)
     y_test = np.argmax(y_test, axis=1)
     print("Total number of test examples: {}".format(len(y_test)))
+
+elif FLAGS.eval_dataset == 'test':
+    datasets = data_helpers.get_datasets_localdata(container_path=cfg["datasets"][dataset_name]["test_path"],
+                                                   categories=cfg["datasets"][dataset_name]["categories"],
+                                                   shuffle=cfg["datasets"][dataset_name]["shuffle"],
+                                                   random_state=cfg["datasets"][dataset_name]["random_state"])
+    x_raw, y_test = data_helpers.load_data_labels(datasets)
+    y_test = np.argmax(y_test, axis=1)
+
 else:
     if dataset_name == "mrpolarity":
         datasets = {"target_names": ['positive_examples', 'negative_examples']}

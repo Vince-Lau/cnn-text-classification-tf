@@ -1,0 +1,1 @@
+tensorboard --logdir ./runs/1579316585/summaries/

@@ -28,7 +28,7 @@ tf.flags.DEFINE_float("l2_reg_lambda", 0.0, "L2 regularization lambda (default: 
 
 # Training parameters
 tf.flags.DEFINE_integer("batch_size", 128, "Batch Size (default: 64)")
-tf.flags.DEFINE_integer("num_epochs", 5, "Number of training epochs (default: 200)")
+tf.flags.DEFINE_integer("num_epochs", 10, "Number of training epochs (default: 200)")
 tf.flags.DEFINE_integer("evaluate_every", 100, "Evaluate model on dev set after this many steps (default: 100)")
 tf.flags.DEFINE_integer("checkpoint_every", 100, "Save model after this many steps (default: 100)")
 tf.flags.DEFINE_integer("num_checkpoints", 5, "Number of checkpoints to store (default: 5)")
@@ -48,7 +48,6 @@ with open("config.yml", 'r') as ymlfile:
     cfg = yaml.load(ymlfile)
 
 dataset_name = cfg["datasets"]["default"]
-embedding_name = ''
 if FLAGS.enable_word_embeddings and cfg['word_embeddings']['default'] is not None:
     embedding_name = cfg['word_embeddings']['default']
     embedding_dimension = cfg['word_embeddings'][embedding_name]['dimension']
@@ -58,11 +57,33 @@ else:
 # Data Preparation
 # ==================================================
 
-# 数据准备
+# Load data
 print("Loading data...")
+datasets = None
 split_sample = SampleSplit(CLEAN_DATA_PTH)
-datasets = split_sample.split_sample_a2()
-x_text, y = datasets['data'][0], datasets['data'][2]
+if dataset_name == "mrpolarity":
+    datasets = data_helpers.get_datasets_mrpolarity(cfg["datasets"][dataset_name]["positive_data_file"]["path"],
+                                                    cfg["datasets"][dataset_name]["negative_data_file"]["path"])
+    x_text, y = data_helpers.load_data_labels(datasets)
+
+elif dataset_name == "20newsgroup":
+    datasets = data_helpers.get_datasets_20newsgroup(subset="train",
+                                                     categories=cfg["datasets"][dataset_name]["categories"],
+                                                     shuffle=cfg["datasets"][dataset_name]["shuffle"],
+                                                     random_state=cfg["datasets"][dataset_name]["random_state"])
+    x_text, y = data_helpers.load_data_labels(datasets)
+
+elif dataset_name == "localdata":
+    # datasets = data_helpers.get_datasets_localdata(container_path=cfg["datasets"][dataset_name]["container_path"],
+    #                                                  categories=cfg["datasets"][dataset_name]["categories"],
+    #                                                  shuffle=cfg["datasets"][dataset_name]["shuffle"],
+    #                                                  random_state=cfg["datasets"][dataset_name]["random_state"])
+    datasets = split_sample.split_sample_a2()
+    x_text, y = datasets[0], datasets[2]
+
+else:
+    x_text, y = [], []
+
 
 # Build vocabulary
 max_document_length = max([len(x.split(" ")) for x in x_text])
@@ -83,8 +104,8 @@ print("Vocabulary Size: {:d}".format(len(vocab_processor.vocabulary_)))
 print("Train/Dev split: {:d}/{:d}".format(len(y_train), len(y_dev)))
 
 
-# 训练过程
-# ============================================================
+# Training
+# ===========================================================================================
 
 with tf.Graph().as_default():
     session_conf = tf.ConfigProto(

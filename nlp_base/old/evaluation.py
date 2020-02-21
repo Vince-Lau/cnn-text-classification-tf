@@ -2,7 +2,7 @@
 import tensorflow as tf
 import numpy as np
 import os
-from old import data_helper_ori
+from nlp_base.old import data_helper_ori
 # from TextCNN import TextCNN
 from tensorflow.contrib import learn
 import csv

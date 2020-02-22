@@ -10,12 +10,14 @@ import yaml
 import math
 import gc
 from nlp_base.sample_split import *
+from nlp_base.sample_split_classII import *
+
 
 # Parameters
 # ==================================================
 
 # Data loading params
-CLEAN_DATA_PTH = './data/id_all_text/ori/id_ClassI_20200116_all_clean.csv'
+CLEAN_DATA_PTH = './data/id_all_text/ori/id_ClassII_20200222_all_clean.csv'
 tf.flags.DEFINE_float("dev_sample_percentage", .1, "Percentage of the training data to use for validation")
 
 # Model Hyperparameters
@@ -60,8 +62,8 @@ else:
 
 # 数据准备
 print("Loading data...")
-split_sample = SampleSplit(CLEAN_DATA_PTH)
-datasets = split_sample.split_sample_a2()
+split_sample = SampleSplitII(CLEAN_DATA_PTH)
+datasets = split_sample.split_sample_random()
 x_text, y = datasets['data'][0], datasets['data'][2]
 
 # Build vocabulary

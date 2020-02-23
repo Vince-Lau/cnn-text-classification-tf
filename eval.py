@@ -29,7 +29,7 @@ with open("config.yml", 'r') as ymlfile:
 # Data Parameters
 
 # Eval Parameters
-CLEAN_DATA_PTH = './data/id_all_text/ori/id_ClassI_20200116_all_clean.csv'
+CLEAN_DATA_PTH = './data/id_all_text/ori/id_ClassII_20200222_all_clean.csv'
 tf.flags.DEFINE_integer("batch_size", 64, "Batch Size (default: 64)")
 tf.flags.DEFINE_string("checkpoint_dir", "./runs/1579423242/checkpoints/", "Checkpoint directory from training run")
 tf.flags.DEFINE_string("eval_dataset", "test", "Evaluate use dataset: train/test")

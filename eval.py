@@ -5,6 +5,7 @@ import numpy as np
 import os
 from nlp_base import data_helpers
 from nlp_base.sample_split import *
+from nlp_base.sample_split_classII import *
 from tensorflow.contrib import learn
 import csv
 from sklearn import metrics
@@ -52,8 +53,8 @@ datasets = None
 dataset_name = cfg["datasets"]["default"]
 
 if FLAGS.eval_dataset == 'test':
-    split_sample = SampleSplit(CLEAN_DATA_PTH)
-    datasets = split_sample.split_sample_a2()
+    split_sample = SampleSplitII(CLEAN_DATA_PTH)
+    datasets = split_sample.split_sample_random()
     x_raw, y_test = datasets['data'][1], datasets['data'][3]
     y_test = np.argmax(y_test, axis=1)
 

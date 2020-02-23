@@ -56,7 +56,7 @@ class SampleSplitII():
                 tmp_vec = np.zeros((len(labels_class)), dtype=int)
                 tmp_vec[np.where(labels_class == li)] = 1
                 labels_vec.append(list(tmp_vec))
-            labels_class = labels_class.astype(str)
+            # labels_class = labels_class.astype(str)
         else:
             print('类别不对齐')
             print(' labels_list: %s\n labels_class: %s\n' % (set(labels_list), set(labels_class)))
@@ -66,8 +66,9 @@ class SampleSplitII():
                 tmp_vec = np.zeros(labels_class.shape[1], dtype=int)
                 tmp_vec[np.where(labels_class == li)] = 1
                 labels_vec.append(list(tmp_vec))
-            labels_class = labels_class.astype(str)
-        return np.array(labels_vec), labels_class
+            # labels_class = labels_class.astype(str)
+        labels_name = list(range(len(labels_class)))
+        return np.array(labels_vec), labels_name
 
     def split_sample_random(self, split_rate=0.2, rand_seed=10):
         '''

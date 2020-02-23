@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="36610077-c28c-439b-869b-571b8c6b46fe" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/doc/classII_anly.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/doc/classII_anly.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/nlp_base/sample_split_classII.py" beforeDir="false" afterPath="$PROJECT_DIR$/nlp_base/sample_split_classII.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -42,8 +41,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/eval.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="34" column="71" selection-start-line="34" selection-start-column="60" selection-end-line="34" selection-end-column="71" />
+            <state relative-caret-position="3227">
+              <caret line="114" column="39" selection-start-line="114" selection-start-column="18" selection-end-line="114" selection-end-column="39" />
               <folding>
                 <element signature="e#24#47#0" expanded="true" />
               </folding>
@@ -54,8 +53,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/for_linux.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="29" lean-forward="true" selection-start-column="29" selection-end-column="29" />
+            <state relative-caret-position="330">
+              <caret line="10" column="42" selection-start-line="10" selection-end-line="10" selection-end-column="62" />
             </state>
           </provider>
         </entry>
@@ -63,8 +62,21 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/train.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="99">
-              <caret line="3" column="17" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
+            <state relative-caret-position="257">
+              <caret line="65" column="12" selection-start-line="65" selection-start-column="6" selection-end-line="65" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/nlp_base/sample_split.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1568">
+              <caret line="130" column="77" selection-start-line="130" selection-start-column="76" selection-end-line="130" selection-end-column="77" />
+              <folding>
+                <element signature="e#93#125#0" expanded="true" />
+                <element signature="e#3776#4994#0" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -72,14 +84,23 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/nlp_base/sample_split_classII.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="602">
-              <caret line="69" column="49" lean-forward="true" selection-start-line="69" selection-start-column="49" selection-end-line="69" selection-end-column="49" />
+            <state relative-caret-position="315">
+              <caret line="68" column="53" lean-forward="true" selection-start-line="68" selection-start-column="53" selection-end-line="68" selection-end-column="53" />
               <folding>
                 <element signature="e#185#217#0" expanded="true" />
                 <element signature="e#1005#1520#0" />
                 <element signature="e#1572#3849#0" />
                 <element signature="e#4234#5250#0" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/runs/1579437887/error_sample.csv">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="4" lean-forward="true" selection-start-column="4" selection-end-column="4" />
             </state>
           </provider>
         </entry>
@@ -114,9 +135,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>dataset_name</find>
-      <find>datasets</find>
-      <find>fetch_20newsgroups</find>
       <find>subset</find>
       <find>data_helper</find>
       <find>1579080363</find>
@@ -144,6 +162,9 @@
       <find>embedding_name</find>
       <find>id_ClassII_20200218</find>
       <find>elf.CLS</find>
+      <find>labels</find>
+      <find>sample</find>
+      <find>metrics</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -188,10 +209,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-11" />
-    <option name="y" value="-11" />
+    <option name="x" value="-10" />
     <option name="width" value="1847" />
-    <option name="height" value="1100" />
+    <option name="height" value="1090" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -210,6 +230,17 @@
               <item name="cnn-text-classification-tf" type="b2602c69:ProjectViewProjectNode" />
               <item name="cnn-text-classification-tf" type="462c0819:PsiDirectoryNode" />
               <item name="nlp_base" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cnn-text-classification-tf" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cnn-text-classification-tf" type="462c0819:PsiDirectoryNode" />
+              <item name="runs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cnn-text-classification-tf" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cnn-text-classification-tf" type="462c0819:PsiDirectoryNode" />
+              <item name="runs" type="462c0819:PsiDirectoryNode" />
+              <item name="1579437887" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -399,7 +430,7 @@
       <workItem from="1581674653311" duration="1328000" />
       <workItem from="1581947384197" duration="30000" />
       <workItem from="1581947439474" duration="161000" />
-      <workItem from="1581947699098" duration="49153000" />
+      <workItem from="1581947699098" duration="53975000" />
     </task>
     <task id="LOCAL-00001" summary="样本选择代码提交">
       <created>1579342970163</created>
@@ -433,7 +464,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="186507000" />
+    <option name="totallyTimeSpent" value="191329000" />
   </component>
   <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
@@ -445,7 +476,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-11" y="-11" width="1847" height="1100" extended-state="0" />
+    <frame x="-10" y="0" width="1847" height="1090" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19954519" />
@@ -810,13 +841,6 @@
     <entry file="file://$PROJECT_DIR$/runs/1579423242/prediction.csv">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/runs/1579437887/error_sample.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="4" lean-forward="true" selection-start-column="4" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/nlp_base/data_helpers.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1650">
@@ -856,13 +880,6 @@
       <provider selected="true" editor-type-id="LargeFileEditor">
         <state relative-caret-position="3102">
           <caret line="94" column="65" selection-start-line="94" selection-start-column="65" selection-end-line="94" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/runs/1579437887/prediction.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="8" column="1067" selection-start-line="8" selection-start-column="1067" selection-end-line="8" selection-end-column="1067" />
         </state>
       </provider>
     </entry>
@@ -935,27 +952,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/nlp_base/clean_str.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="385">
-          <caret line="24" column="28" selection-start-line="24" selection-start-column="28" selection-end-line="24" selection-end-column="28" />
-          <folding>
-            <element signature="e#93#111#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nlp_base/sample_split.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="511">
-          <caret line="171" column="8" selection-start-line="171" selection-start-column="8" selection-end-line="171" selection-end-column="86" />
-          <folding>
-            <element signature="e#93#125#0" expanded="true" />
-            <element signature="e#3776#4994#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://D:/Program Files/Anaconda3/Lib/site-packages/sklearn/utils/validation.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="327">
@@ -970,34 +966,69 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/for_linux.sh">
+    <entry file="file://$PROJECT_DIR$/train.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="29" lean-forward="true" selection-start-column="29" selection-end-column="29" />
+        <state relative-caret-position="257">
+          <caret line="65" column="12" selection-start-line="65" selection-start-column="6" selection-end-line="65" selection-end-column="12" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/train.py">
+    <entry file="file://$PROJECT_DIR$/for_linux.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="99">
-          <caret line="3" column="17" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
+        <state relative-caret-position="330">
+          <caret line="10" column="42" selection-start-line="10" selection-end-line="10" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nlp_base/clean_str.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="385">
+          <caret line="24" column="28" selection-start-line="24" selection-start-column="28" selection-end-line="24" selection-end-column="28" />
+          <folding>
+            <element signature="e#93#111#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/eval.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="34" column="71" selection-start-line="34" selection-start-column="60" selection-end-line="34" selection-end-column="71" />
+        <state relative-caret-position="3227">
+          <caret line="114" column="39" selection-start-line="114" selection-start-column="18" selection-end-line="114" selection-end-column="39" />
           <folding>
             <element signature="e#24#47#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/nlp_base/sample_split.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1568">
+          <caret line="130" column="77" selection-start-line="130" selection-start-column="76" selection-end-line="130" selection-end-column="77" />
+          <folding>
+            <element signature="e#93#125#0" expanded="true" />
+            <element signature="e#3776#4994#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/runs/1579437887/error_sample.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="4" lean-forward="true" selection-start-column="4" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/runs/1579437887/prediction.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="18" column="45" lean-forward="true" selection-start-line="18" selection-start-column="45" selection-end-line="18" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/nlp_base/sample_split_classII.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="602">
-          <caret line="69" column="49" lean-forward="true" selection-start-line="69" selection-start-column="49" selection-end-line="69" selection-end-column="49" />
+        <state relative-caret-position="315">
+          <caret line="68" column="53" lean-forward="true" selection-start-line="68" selection-start-column="53" selection-end-line="68" selection-end-column="53" />
           <folding>
             <element signature="e#185#217#0" expanded="true" />
             <element signature="e#1005#1520#0" />

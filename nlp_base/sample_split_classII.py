@@ -21,6 +21,14 @@ class SampleSplitII():
         self.CLEAN_DATA_PTH = clean_pth
         self.labels_target = [64, 112, 74, 49, 60, 81, 21, 46, 19, 14, 66, 43, 48, 102, 57, 53]
         self.labels_all = [64, 112, 74, 49, 60, 81, 21, 46, 19, 14, 66, 43, 48, 102, 57, 53, 34]
+        self.labels_name_num = {'skin care-Sunscreen': 53, 'skin care-makeup remover': 57,
+                                'BodyCare-Body Moisturizer': 102, 'skin care-Serum': 48,
+                                'skin care-Face Wash': 43, 'make up-Makeup Setting': 66,
+                                'Other': 34, 'make up-Blush': 14, 'make up-Eyeshadow': 19,
+                                'skin care-Moisturizer': 46, 'make up-Foundation': 21,
+                                'skin care-Face Mask': 81, 'skin care-skincare tips': 60,
+                                'skin care-SkinCare others': 49, 'make up-makeup others': 74,
+                                'Fashion-Fashion Styles': 112, 'make up-Lips': 64}
 
     def data_deal_other(self):
         data = pd.read_csv(self.CLEAN_DATA_PTH)
@@ -56,7 +64,6 @@ class SampleSplitII():
                 tmp_vec = np.zeros((len(labels_class)), dtype=int)
                 tmp_vec[np.where(labels_class == li)] = 1
                 labels_vec.append(list(tmp_vec))
-            # labels_class = labels_class.astype(str)
         else:
             print('类别不对齐')
             print(' labels_list: %s\n labels_class: %s\n' % (set(labels_list), set(labels_class)))
@@ -66,8 +73,8 @@ class SampleSplitII():
                 tmp_vec = np.zeros(labels_class.shape[1], dtype=int)
                 tmp_vec[np.where(labels_class == li)] = 1
                 labels_vec.append(list(tmp_vec))
-            # labels_class = labels_class.astype(str)
-        labels_name = list(range(len(labels_class)))
+        num_to_name = {v: k for k, v in self.labels_name_num.items()}
+        labels_name = [num_to_name[ni] for ni in labels_class]
         return np.array(labels_vec), labels_name
 
     def split_sample_random(self, split_rate=0.2, rand_seed=10):

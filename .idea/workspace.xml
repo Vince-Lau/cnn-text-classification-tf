@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="36610077-c28c-439b-869b-571b8c6b46fe" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/eval.py" beforeDir="false" afterPath="$PROJECT_DIR$/eval.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/classII_anly.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/doc/classII_anly.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nlp_base/sample_split_classII.py" beforeDir="false" afterPath="$PROJECT_DIR$/nlp_base/sample_split_classII.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -38,11 +39,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/eval.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="462">
-              <caret line="59" lean-forward="true" selection-start-line="59" selection-end-line="59" />
+            <state relative-caret-position="231">
+              <caret line="34" column="71" selection-start-line="34" selection-start-column="60" selection-end-line="34" selection-end-column="71" />
               <folding>
                 <element signature="e#24#47#0" expanded="true" />
               </folding>
@@ -53,8 +54,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/for_linux.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="10" column="33" lean-forward="true" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
+            <state>
+              <caret column="29" lean-forward="true" selection-start-column="29" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -68,15 +69,14 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/nlp_base/sample_split_classII.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="22" column="38" selection-start-line="22" selection-start-column="38" selection-end-line="22" selection-end-column="38" />
+            <state relative-caret-position="602">
+              <caret line="69" column="49" lean-forward="true" selection-start-line="69" selection-start-column="49" selection-end-line="69" selection-end-column="49" />
               <folding>
                 <element signature="e#185#217#0" expanded="true" />
                 <element signature="e#1005#1520#0" />
-                <element signature="e#690#1497#0" />
                 <element signature="e#1572#3849#0" />
                 <element signature="e#4234#5250#0" />
               </folding>
@@ -168,10 +168,10 @@
         <option value="$PROJECT_DIR$/nlp_base/sample_split.py" />
         <option value="$PROJECT_DIR$/doc/classII_anly.ipynb" />
         <option value="$PROJECT_DIR$/nlp_base/clean_str.py" />
-        <option value="$PROJECT_DIR$/nlp_base/sample_split_classII.py" />
         <option value="$PROJECT_DIR$/train.py" />
         <option value="$PROJECT_DIR$/for_linux.sh" />
         <option value="$PROJECT_DIR$/eval.py" />
+        <option value="$PROJECT_DIR$/nlp_base/sample_split_classII.py" />
       </list>
     </option>
   </component>
@@ -205,6 +205,11 @@
             <path>
               <item name="cnn-text-classification-tf" type="b2602c69:ProjectViewProjectNode" />
               <item name="cnn-text-classification-tf" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cnn-text-classification-tf" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cnn-text-classification-tf" type="462c0819:PsiDirectoryNode" />
+              <item name="nlp_base" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -394,7 +399,7 @@
       <workItem from="1581674653311" duration="1328000" />
       <workItem from="1581947384197" duration="30000" />
       <workItem from="1581947439474" duration="161000" />
-      <workItem from="1581947699098" duration="48093000" />
+      <workItem from="1581947699098" duration="49153000" />
     </task>
     <task id="LOCAL-00001" summary="样本选择代码提交">
       <created>1579342970163</created>
@@ -428,7 +433,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="185447000" />
+    <option name="totallyTimeSpent" value="186507000" />
   </component>
   <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
@@ -467,27 +472,27 @@
       <window_info anchor="right" id="Database" order="4" weight="0.3299262" />
     </layout>
     <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.19931857" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19954519" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Jupyter" order="0" weight="0.3292683" />
+      <window_info anchor="bottom" id="Jupyter" order="0" weight="0.29933482" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" weight="0.3292683" />
-      <window_info anchor="bottom" id="Run" order="3" weight="0.4578714" />
-      <window_info anchor="bottom" id="Debug" order="4" visible="true" weight="0.41796008" />
+      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.49971607" weight="0.51773834" />
+      <window_info anchor="bottom" id="Debug" order="4" weight="0.6219512" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="7" weight="0.32815966" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32815966" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32777777" />
       <window_info anchor="bottom" id="Database Changes" order="10" />
-      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="12" weight="0.32815966" />
-      <window_info anchor="bottom" id="Python Console" order="13" weight="0.20288248" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50028396" side_tool="true" weight="0.5654102" />
+      <window_info anchor="bottom" id="Terminal" order="12" weight="0.32777777" />
+      <window_info anchor="bottom" id="Python Console" order="13" weight="0.44789356" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info active="true" anchor="right" id="SciView" order="3" visible="true" weight="0.31118682" />
+      <window_info anchor="right" id="SciView" order="3" weight="0.22487223" />
       <window_info anchor="right" id="Database" order="4" weight="0.3299262" />
     </layout-to-restore>
   </component>
@@ -551,8 +556,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/nlp_base/sample_split_classII.py</url>
-          <line>64</line>
+          <line>65</line>
           <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/nlp_base/sample_split_classII.py</url>
+          <line>45</line>
+          <option name="timeStamp" value="16" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -960,6 +970,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/for_linux.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="29" lean-forward="true" selection-start-column="29" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/train.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="99">
@@ -967,33 +984,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/for_linux.sh">
+    <entry file="file://$PROJECT_DIR$/eval.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="10" column="33" lean-forward="true" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
+        <state relative-caret-position="231">
+          <caret line="34" column="71" selection-start-line="34" selection-start-column="60" selection-end-line="34" selection-end-column="71" />
+          <folding>
+            <element signature="e#24#47#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/nlp_base/sample_split_classII.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="22" column="38" selection-start-line="22" selection-start-column="38" selection-end-line="22" selection-end-column="38" />
+        <state relative-caret-position="602">
+          <caret line="69" column="49" lean-forward="true" selection-start-line="69" selection-start-column="49" selection-end-line="69" selection-end-column="49" />
           <folding>
             <element signature="e#185#217#0" expanded="true" />
             <element signature="e#1005#1520#0" />
-            <element signature="e#690#1497#0" />
             <element signature="e#1572#3849#0" />
             <element signature="e#4234#5250#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eval.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="59" lean-forward="true" selection-start-line="59" selection-end-line="59" />
-          <folding>
-            <element signature="e#24#47#0" expanded="true" />
           </folding>
         </state>
       </provider>

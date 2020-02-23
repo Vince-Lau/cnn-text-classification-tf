@@ -1,5 +1,6 @@
-#! /usr/bin/env python
 
+import os, sys
+sys.path.append(os.getcwd())
 import tensorflow as tf
 import time
 import datetime

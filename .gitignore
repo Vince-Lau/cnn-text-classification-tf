@@ -2,6 +2,7 @@
 runs/
 data/
 .idea/
+for_linux.sh
 
 # Created by https://www.gitignore.io/api/python,ipythonnotebook
 

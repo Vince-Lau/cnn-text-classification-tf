@@ -12,6 +12,7 @@ from nlp_base.clean_str import *
 import pandas as pd
 import gc
 from sklearn.model_selection import train_test_split
+from imblearn.over_sampling import RandomOverSampler
 
 
 class SampleSplitII():
@@ -111,7 +112,7 @@ class SampleSplitII():
 
     def split_sample_num(self, split_rate=0.2, rand_seed=10):
         '''
-        对多样本进行过采样
+        对多样本进行欠采样
         :param data: datafram, text data
         :param split_rate: float, split rate
         :param rand_seed: int, rand seed
@@ -135,8 +136,30 @@ class SampleSplitII():
         dataset = self.data_deal_dataset(X_train, X_test, y_train, y_test)
         return dataset
 
+    def split_sample_over_random(self, split_rate=0.2, rand_seed=10):
+        sample_num = 3000
+        label_most = [49, 74, 112, 64, 34]
+
+        data = self.data_deal_other()
+        data_new = data[~data['labels'].isin(label_most)]
+        for di in label_most:
+            data_new = pd.concat([data_new, data[data.labels == di].sample(n=sample_num, random_state=rand_seed)])
+        data_new = data_new.reset_index(drop=True)
+
+        # 对少数样本过采样
+        ros = RandomOverSampler(sampling_strategy='not majority', random_state=rand_seed)
+        feature = np.concatenate((np.array([data_new.index]).T, data_new.values), axis=1)
+        X_resampled, y_resampled = ros.fit_sample(feature, data_new['labels'].values)
+        X_train, X_test, y_train, y_test = train_test_split(X_resampled.T[1],
+                                                            y_resampled,
+                                                            test_size=split_rate,
+                                                            stratify=y_resampled,
+                                                            random_state=rand_seed)
+        dataset = self.data_deal_dataset(X_train, X_test, y_train, y_test)
+        return dataset
+
 
 if __name__ == '__main__':
     Sp = SampleSplitII('../data/id_all_text/ori/id_ClassII_20200222_all_clean.csv')
     # dataset_a1 = Sp.split_sample_random()
-    dataset_a2 = Sp.split_sample_num()
+    dataset_a2 = Sp.split_sample_over_random()

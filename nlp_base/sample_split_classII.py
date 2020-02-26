@@ -158,8 +158,33 @@ class SampleSplitII():
         dataset = self.data_deal_dataset(X_train, X_test, y_train, y_test)
         return dataset
 
+    def split_sample_over_random2(self, split_rate=0.2, rand_seed=10):
+        sample_num = 4000
+        label_most = [112, 64, 34]
+
+        # 过滤太多的数据，重新组合数据
+        data = self.data_deal_other()
+        data_new = data[~data['labels'].isin(label_most)]
+
+        for di in label_most:
+            data_new = pd.concat([data_new, data[data.labels == di].sample(n=sample_num, random_state=rand_seed)])
+        data_new = data_new.reset_index(drop=True)
+
+        # 划出测试集
+        X_train, X_test, y_train, y_test = train_test_split(data_new['content'],
+                                                            data_new['labels'],
+                                                            test_size=split_rate,
+                                                            stratify=data_new['labels'],
+                                                            random_state=rand_seed)
+        # 对少数样本过采样
+        ros = RandomOverSampler(sampling_strategy='not majority', random_state=rand_seed)
+        X_train = np.concatenate((np.array([X_train.index]).T, np.array([X_train.values]).T), axis=1)
+        X_train, y_train = ros.fit_sample(X_train, y_train.values)
+        dataset = self.data_deal_dataset(X_train.T[1], X_test, y_train, y_test)
+        return dataset
+
 
 if __name__ == '__main__':
     Sp = SampleSplitII('../data/id_all_text/ori/id_ClassII_20200222_all_clean.csv')
     # dataset_a1 = Sp.split_sample_random()
-    dataset_a2 = Sp.split_sample_over_random()
+    dataset_a2 = Sp.split_sample_over_random2()

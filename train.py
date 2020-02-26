@@ -64,7 +64,7 @@ else:
 # 数据准备
 print("Loading data...")
 split_sample = SampleSplitII(CLEAN_DATA_PTH)
-datasets = split_sample.split_sample_over_random()
+datasets = split_sample.split_sample_over_random2()
 x_text, y = datasets['data'][0], datasets['data'][2]
 
 # Build vocabulary

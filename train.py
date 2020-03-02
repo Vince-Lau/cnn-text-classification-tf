@@ -90,9 +90,12 @@ print("Train/Dev split: {:d}/{:d}".format(len(y_train), len(y_dev)))
 # ============================================================
 
 with tf.Graph().as_default():
-    session_conf = tf.ConfigProto(
-      allow_soft_placement=FLAGS.allow_soft_placement,
-      log_device_placement=FLAGS.log_device_placement)
+    # session_conf = tf.ConfigProto(
+    #   allow_soft_placement=FLAGS.allow_soft_placement,
+    #   log_device_placement=FLAGS.log_device_placement)
+    session_conf = tf.ConfigProto(intra_op_parallelism_threads=8, inter_op_parallelism_threads=8,
+                                  device_count={'CPU': 8})
+
     sess = tf.Session(config=session_conf)
     with sess.as_default():
         cnn = TextCNN(
@@ -151,6 +154,7 @@ with tf.Graph().as_default():
 
         # Initialize all variables
         sess.run(tf.global_variables_initializer())
+
         if FLAGS.enable_word_embeddings and cfg['word_embeddings']['default'] is not None:
             vocabulary = vocab_processor.vocabulary_
             initW = None

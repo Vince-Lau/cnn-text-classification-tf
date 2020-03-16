@@ -10,15 +10,19 @@ from tensorflow.contrib import learn
 import yaml
 import math
 import gc
+import os
 from nlp_base.sample_split import *
 from nlp_base.sample_split_classII import *
+
+
+with open("config.yml", 'r') as ymlfile:
+    cfg = yaml.load(ymlfile)
 
 
 # Parameters
 # ==================================================
 
 # Data loading params
-CLEAN_DATA_PTH = './data/id_all_text/ori/id_ClassII_20200222_all_clean.csv'
 tf.flags.DEFINE_float("dev_sample_percentage", .1, "Percentage of the training data to use for validation")
 
 # Model Hyperparameters
@@ -47,9 +51,6 @@ for attr, value in sorted(FLAGS.flag_values_dict().items()):
     print("{}={}".format(attr.upper(), value))
 print("")
 
-with open("config.yml", 'r') as ymlfile:
-    cfg = yaml.load(ymlfile)
-
 dataset_name = cfg["datasets"]["default"]
 embedding_name = ''
 if FLAGS.enable_word_embeddings and cfg['word_embeddings']['default'] is not None:
@@ -63,7 +64,7 @@ else:
 
 # 数据准备
 print("Loading data...")
-split_sample = SampleSplitII(CLEAN_DATA_PTH)
+split_sample = SampleSplitII()
 datasets = split_sample.split_sample_over_random2()
 x_text, y = datasets['data'][0], datasets['data'][2]
 

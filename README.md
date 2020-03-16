@@ -1,6 +1,16 @@
-**[This code belongs to the "Implementing a CNN for Text Classification in Tensorflow" blog post.](http://www.wildml.com/2015/12/implementing-a-cnn-for-text-classification-in-tensorflow/)**
 
 It is slightly simplified implementation of Kim's [Convolutional Neural Networks for Sentence Classification](http://arxiv.org/abs/1408.5882) paper in Tensorflow.
+
+## 样本准备
+1. 使用`datawork`进行样本数据整理，脚本参考`fmd_dw_zxx`空间中的研发测试下`/liuyu/lyj_get_sample_for_classify`，将样本数据保存在`t_load_text_classify_sample`表格。
+2. 使用odpscmd命令行工具，将数据下载到开发环境，命令如下
+```bash
+tunnel download -fd='||' -rd='|-|' t_load_text_classify_sample text_classify_sample.txt;
+```
+3. 在本地使用脚本`./nlp_bash/clean_str.py`清洗数据，并保存
+4. 上传原始样本数据和清理后的样本数据到oss上备份，测试样本放在`oss://devops-fimedia-bucket/fm-algo-machine-classify/data/`,
+确定使用数据集训练生产模型，放在生产路径`oss://algo-fimedia-bucket/algo-machine-classify/data/`，
+如`id_ClassII_20200222_all.txt`和`id_ClassII_20200222_all_clean.txt`
 
 ## Requirements
 
@@ -66,5 +76,6 @@ Replace the checkpoint dir with the output from the training. To use your own da
 
 ## References
 
+- **[This code belongs to the "Implementing a CNN for Text Classification in Tensorflow" blog post.](http://www.wildml.com/2015/12/implementing-a-cnn-for-text-classification-in-tensorflow/)**
 - [Convolutional Neural Networks for Sentence Classification](http://arxiv.org/abs/1408.5882)
 - [A Sensitivity Analysis of (and Practitioners' Guide to) Convolutional Neural Networks for Sentence Classification](http://arxiv.org/abs/1510.03820)

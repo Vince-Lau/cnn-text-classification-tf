@@ -2,7 +2,7 @@
 runs/
 data/
 .idea/
-for_linux.sh
+model_zoo/
 
 # Created by https://www.gitignore.io/api/python,ipythonnotebook
 

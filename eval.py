@@ -53,7 +53,7 @@ datasets = None
 dataset_name = cfg["datasets"]["default"]
 
 if FLAGS.eval_dataset == 'test':
-    split_sample = SampleSplitII(CLEAN_DATA_PTH)
+    split_sample = SampleSplitII()
     datasets = split_sample.split_sample_over_random2()
     x_raw, y_test = datasets['data'][1], datasets['data'][3]
     y_test = np.argmax(y_test, axis=1)
